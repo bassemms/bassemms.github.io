@@ -30,6 +30,7 @@ a {
 }
 
 .custom-cursor {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -40,10 +41,10 @@ a {
   z-index: 9999;
   mix-blend-mode: difference;
   padding: 10px;
-  display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
+  opacity: 0;
 }
 
 .cursor-text {

@@ -51,6 +51,12 @@ const Introduction = () => {
         >
           Software Engineer
         </p>
+        <a
+          href="#about"
+          className="view text-lg sm:text-xl md:text-xl lg:text-2xl select-none"
+        >
+          More about me
+        </a>
       </div>
     </div>
   );
