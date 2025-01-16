@@ -15,13 +15,13 @@
 }
 
 @font-face {
-  font-family: 'Satoshi';
-  src: url('fonts/Satoshi-Variable.ttf') format('truetype');
+  font-family: "Satoshi";
+  src: url("fonts/Satoshi-Variable.ttf") format("truetype");
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: var(--foreground);
   cursor: none;
 }
 
@@ -48,7 +48,7 @@ a {
 }
 
 .cursor-text {
-  font-family: 'Satoshi';
+  font-family: "Satoshi";
   font-size: 5px;
   font-weight: 900;
   text-transform: uppercase;

@@ -2,10 +2,37 @@
 
 import Cursor from "@/components/Cursor";
 import Introduction from "@/components/Introduction";
+import Me from "@/components/Me";
 import Lenis from "lenis";
-import { useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Skills from "@/components/Skills";
 
 export default function Home() {
+  const sectionRefs = useRef<HTMLDivElement[]>([]);
+
+  const [width, setWidth] = useState<number>(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
+
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+
+  const isMobile = width <= 768;
+
+  const addToRefs = (el: HTMLDivElement | null) => {
+    if (el && !sectionRefs.current.includes(el)) {
+      sectionRefs.current.push(el);
+    }
+  };
+
   useEffect(() => {
     const lenis = new Lenis();
     const raf = (time: number) => {
@@ -13,13 +40,48 @@ export default function Home() {
       requestAnimationFrame(raf);
     };
     requestAnimationFrame(raf);
-  });
+
+    sectionRefs.current.forEach((section) => {
+      if (section) {
+        ScrollTrigger.create({
+          trigger: section,
+          start: "top top",
+          end: "bottom top",
+          snap: {
+            snapTo: 1,
+            duration: { min: 0.2, max: 0.5 },
+            delay: 0.5,
+            ease: "power1.inOut",
+          },
+        });
+      }
+    });
+  }, []);
 
   return (
     <>
       <Cursor />
       <div className="font-[family-name:var(--font-satoshi-variable)]">
-        <Introduction />
+        <div
+          className="section h-screen w-full overflow-hidden"
+          ref={addToRefs}
+        >
+          <Introduction />
+        </div>
+        <div
+          className="section h-screen w-full overflow-hidden"
+          ref={addToRefs}
+        >
+          <Me />
+        </div>
+        {isMobile && (
+          <div
+            className="visible lg:invisible section h-screen w-full overflow-hidden"
+            ref={addToRefs}
+          >
+            <Skills />
+          </div>
+        )}
       </div>
     </>
   );
