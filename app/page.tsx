@@ -72,11 +72,11 @@ export default function Home() {
           className="section h-screen w-full overflow-hidden"
           ref={addToRefs}
         >
-          <Me />
+          <Me isMobile={isMobile} />
         </div>
         {isMobile && (
           <div
-            className="visible lg:invisible section h-screen w-full overflow-hidden"
+            className="section h-screen w-full overflow-hidden"
             ref={addToRefs}
           >
             <Skills />

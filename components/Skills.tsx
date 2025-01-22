@@ -29,12 +29,12 @@ const Skills = () => {
 
   return (
     <div
-      className="grid gap-16 items-center justify-center select-none mt-16"
+      className="flex flex-col lg:flex-row gap-16 lg:gap-4 lg:grid-cols-2 items-center justify-center select-none mt-16 lg:justify-items-end lg:justify-end lg:items-end lg:mr-28"
       ref={skills}
     >
-      <div className="flex flex-col gap-8 items-center justify-center p-6 bg-white rounded-3xl shadow-lg text-black">
+      <div className="flex flex-col gap-8 items-center justify-center p-6 bg-white rounded-3xl shadow-lg text-black lg:max-w-1/2">
         <h1 className="text-2xl font-bold mb-4">Skills</h1>
-        <div className="grid grid-cols-3 gap-6 text-center">
+        <div className="grid grid-cols-3 gap-6 text-center ">
           <div className="flex flex-col items-center">
             <Image
               src="/icons/javascript.svg"
@@ -43,7 +43,7 @@ const Skills = () => {
               height={32}
               className="w-12 h-12 mb-2"
             />
-            <span className="font-medium">JavaScript</span>
+            <span className="font-medium">JavaScript⠀</span>
           </div>
           <div className="flex flex-col items-center">
             <Image
@@ -97,7 +97,7 @@ const Skills = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-8 items-center justify-center p-6 bg-white rounded-3xl mx-2 shadow-lg text-black">
+      <div className="flex flex-col gap-8 items-center justify-center p-6 bg-white rounded-3xl shadow-lg text-black lg:max-w-1/2">
         <h1 className="text-2xl font-bold mb-4">Frameworks</h1>
         <div className="grid grid-cols-3 gap-6 text-center">
           <div className="flex flex-col items-center">
