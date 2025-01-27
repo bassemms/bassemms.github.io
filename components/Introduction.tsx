@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import gsap from "gsap";
@@ -20,24 +20,26 @@ const Introduction = () => {
 
   const [blur, setBlur] = useState(4);
 
-  document.addEventListener("mousedown", onMouseHoldClick);
-  document.addEventListener("mouseup", onMouseReleaseClick);
+  useEffect(() => {
+    document.addEventListener("mousedown", onMouseHoldClick);
+    document.addEventListener("mouseup", onMouseReleaseClick);
 
-  let interval: NodeJS.Timeout;
+    let interval: NodeJS.Timeout;
 
-  function onMouseHoldClick() {
-    interval = setInterval(() => {
-      setBlur((prev) => prev - 1);
-      if (blur === 0) {
-        clearInterval(interval);
-      }
-    }, 100);
-  }
+    function onMouseHoldClick() {
+      interval = setInterval(() => {
+        setBlur((prev) => prev - 1);
+        if (blur === 0) {
+          clearInterval(interval);
+        }
+      }, 100);
+    }
 
-  function onMouseReleaseClick() {
-    clearInterval(interval);
-    setBlur(4);
-  }
+    function onMouseReleaseClick() {
+      clearInterval(interval);
+      setBlur(4);
+    }
+  }, [blur]);
 
   const [rotate, setRotate] = useState(false);
 
