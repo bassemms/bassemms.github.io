@@ -60,7 +60,7 @@ export default function Home() {
 
   return (
     <>
-      <Cursor />
+      {isMobile || <Cursor />}
       <div className="font-[family-name:var(--font-satoshi-variable)]">
         <div
           className="section h-screen w-full overflow-hidden"

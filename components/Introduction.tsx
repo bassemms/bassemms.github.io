@@ -39,7 +39,7 @@ const Introduction = () => {
       clearInterval(interval);
       setBlur(4);
     }
-  }, [blur]);
+  }, []);
 
   const [rotate, setRotate] = useState(false);
 
@@ -107,7 +107,8 @@ const Introduction = () => {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] min-h-screen items-center justify-items-center bg-black">
       <div
-        className={"z-0 absolute w-full h-full blur-[" + blur + "px]"}
+        className={"z-0 absolute w-full h-full"}
+        style={{ filter: `blur(${blur}px)` }}
         ref={hyperspeed}
       >
         <Hyperspeed />
