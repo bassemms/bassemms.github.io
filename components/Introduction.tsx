@@ -7,6 +7,7 @@ import gsap from "gsap";
 import SplitType from "split-type";
 import Image from "next/image";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Hyperspeed from "../Backgrounds/Hyperspeed/Hyperspeed.jsx";
 
 const Introduction = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -15,6 +16,7 @@ const Introduction = () => {
   const titleText = useRef<HTMLParagraphElement>(null);
   const github = useRef<HTMLAnchorElement>(null);
   const linkedin = useRef<HTMLAnchorElement>(null);
+  const hyperspeed = useRef<HTMLDivElement>(null);
 
   const [rotate, setRotate] = useState(false);
 
@@ -69,10 +71,21 @@ const Introduction = () => {
         delay: 1,
       });
     }
+    if (hyperspeed.current) {
+      gsap.from(hyperspeed.current, {
+        opacity: 0,
+        ease: "back",
+        duration: 5,
+        delay: 2,
+      });
+    }
   });
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] min-h-screen items-center justify-items-center bg-black">
+      <div className="z-0 absolute w-full h-full" ref={hyperspeed}>
+        <Hyperspeed />
+      </div>
       <div className="flex flex-col gap-8 row-start-2 items-center lg:items-start">
         <div>
           <h1
