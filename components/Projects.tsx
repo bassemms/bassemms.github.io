@@ -22,6 +22,20 @@ const SLIDES: slidesType[] = [
     slideLink: "https://github.com/bassemms/dungeon/",
     slideTech: ["Java", "JavaFX", "Design Patterns", "SOLID"],
   },
+  {
+    slideNumber: 3,
+    slideTitle: "Yet Another Microblogging Server",
+    slideText: "Lightweight Java microblogging server and client.",
+    slideLink: "https://github.com/bassemms/yams/",
+    slideTech: ["Java", "JavaFX", "Design Patterns", "SOLID"],
+  },
+  {
+    slideNumber: 4,
+    slideTitle: "FireClock",
+    slideText: "Schedule management app made with Flutter framework.",
+    slideLink: "https://github.com/bassemms/FireClockFlutter/",
+    slideTech: ["Flutter", "Dart", "TypeScript", "NestJS"],
+  },
 ];
 
 type ProjectsProps = {
