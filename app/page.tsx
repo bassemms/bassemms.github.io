@@ -7,6 +7,7 @@ import Lenis from "lenis";
 import { useRef, useEffect, useState } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Skills from "@/components/Skills";
+import Projects from "@/components/Projects";
 
 export default function Home() {
   const sectionRefs = useRef<HTMLDivElement[]>([]);
@@ -79,7 +80,15 @@ export default function Home() {
             className="section h-screen w-full overflow-hidden"
             ref={addToRefs}
           >
-            <Skills />
+            <Skills isMobile={isMobile} />
+          </div>
+        )}
+        {isMobile && (
+          <div
+            className="section h-screen w-full overflow-hidden"
+            ref={addToRefs}
+          >
+            <Projects isMobile={isMobile} />
           </div>
         )}
       </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import "./embla.css";
 
 const satoshiVariable = localFont({
   src: "./fonts/Satoshi-Variable.ttf",

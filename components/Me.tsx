@@ -144,7 +144,7 @@ const Me = ({ isMobile }: MeProps) => {
           </div>
         </div>
       </div>
-      {isMobile || <Skills />}
+      {isMobile || <Skills isMobile={isMobile} />}
     </>
   );
 };
