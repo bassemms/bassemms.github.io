@@ -57,7 +57,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
               >
                 GitHub Repo
               </a>
-              <div className="flex flex-row gap-2 items-center">
+              <div className="flex flex-row gap-2 items-center flex-wrap">
                 {slide.slideTech.map((tech) => (
                   <span
                     className="rounded-lg bg-violet-200 px-2 text-violet-700 font-semibold"

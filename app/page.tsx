@@ -47,22 +47,34 @@ export default function Home() {
     };
     requestAnimationFrame(raf);
 
-    sectionRefs.current.forEach((section) => {
-      if (section) {
-        ScrollTrigger.create({
-          trigger: section,
-          start: "top top",
-          end: "bottom top",
-          snap: {
-            snapTo: 1,
-            duration: { min: 0.2, max: 0.5 },
-            delay: 0.5,
-            ease: "power1.inOut",
-          },
-        });
-      }
-    });
-  }, []);
+    if (isMobile) {
+      sectionRefs.current.forEach((section) => {
+        if (section) {
+          ScrollTrigger.create({
+            trigger: section,
+            start: "top top",
+            end: "bottom top",
+          });
+        }
+      });
+    } else {
+      sectionRefs.current.forEach((section) => {
+        if (section) {
+          ScrollTrigger.create({
+            trigger: section,
+            start: "top top",
+            end: "bottom top",
+            snap: {
+              snapTo: 1,
+              duration: { min: 0.2, max: 0.5 },
+              delay: 0.5,
+              ease: "power1.inOut",
+            },
+          });
+        }
+      });
+    }
+  }, [isMobile]);
 
   return (
     <>

@@ -7,6 +7,7 @@ import gsap from "gsap";
 import Image from "next/image";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Skills from "./Skills";
+import classNames from "classnames";
 
 type MeProps = {
   isMobile: boolean;
@@ -30,7 +31,8 @@ const Me = ({ isMobile }: MeProps) => {
           toggleActions: "restart reverse restart reverse",
         },
         opacity: 0,
-        x: -100,
+        x: isMobile ? 0 : -100,
+        y: isMobile ? 100 : 0,
         ease: "back",
         duration: 1,
       });
@@ -102,7 +104,12 @@ const Me = ({ isMobile }: MeProps) => {
 
   return (
     <>
-      <div className="items-center justify-center select-none mt-4 lg:mt-16">
+      <div
+        className={classNames(
+          "items-center justify-center select-none mt-4 lg:mt-16",
+          isMobile && "min-h-screen flex"
+        )}
+      >
         <div
           ref={me}
           className="flex flex-col lg:flex-row gap-2 items-center justify-center p-2 bg-white rounded-3xl mx-4 lg:mx-28 shadow-lg"

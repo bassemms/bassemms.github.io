@@ -46,7 +46,7 @@ const Projects = ({ isMobile }: ProjectsProps) => {
   return (
     <div
       className={classNames(
-        "flex flex-col lg:ml-28 items-start justify-start p-6 bg-white rounded-3xl shadow-lg text-black lg:max-w-1/2 grow theme-light",
+        "flex flex-col items-start justify-start p-6 lg:ml-28 bg-white rounded-3xl shadow-lg text-black lg:max-w-1/2 grow theme-light",
         isMobile && "mt-16 mx-4 items-center justify-center"
       )}
     >

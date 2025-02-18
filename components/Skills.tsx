@@ -7,6 +7,7 @@ import gsap from "gsap";
 import Image from "next/image";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Projects from "./Projects";
+import classNames from "classnames";
 
 type SkillsProps = {
   isMobile: boolean;
@@ -34,7 +35,10 @@ const Skills = ({ isMobile }: SkillsProps) => {
 
   return (
     <div
-      className="flex flex-col lg:flex-row gap-16 lg:gap-4 lg:grid-cols-2 items-center justify-center select-none mt-16 lg:justify-items-end lg:justify-end lg:items-end lg:mr-28"
+      className={classNames(
+        "flex flex-col lg:flex-row gap-16 lg:gap-4 lg:grid-cols-2 items-center justify-center select-none lg:mt-16 lg:justify-items-end lg:justify-end lg:items-end lg:mr-28",
+        isMobile && "min-h-screen"
+      )}
       ref={skills}
     >
       {isMobile || <Projects isMobile={isMobile} />}
