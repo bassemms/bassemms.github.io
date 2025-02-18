@@ -105,16 +105,20 @@ const Me = ({ isMobile }: MeProps) => {
       <div className="items-center justify-center select-none mt-4 lg:mt-16">
         <div
           ref={me}
-          className="flex flex-col lg:flex-row gap-8 items-center justify-center p-2 bg-white rounded-3xl mx-4 lg:mx-28 shadow-lg"
+          className="flex flex-col lg:flex-row gap-2 items-center justify-center p-2 bg-white rounded-3xl mx-4 lg:mx-28 shadow-lg"
         >
-          <Image
-            src="/me.jpg"
-            alt="Bassem MSAYIF"
-            width={250}
-            height={250}
-            unoptimized={true}
-            className="rounded-full lg:rounded-s-full border-white border-8 flex-shrink-0"
-          />
+          <div className="relative w-40 h-40 sm:w-56 sm:h-56 lg:w-auto lg:h-auto rounded-full border-white border-8 overflow-hidden">
+            <Image
+              src="/me.jpg"
+              alt="Bassem MSAYIF"
+              width={250}
+              height={250}
+              layout="responsive"
+              className="object-contain"
+              unoptimized
+            />
+          </div>
+
           <div className="flex flex-col gap-8 text-black lg:text-xl text-wrap p-4">
             <span ref={one} id="one">
               Hi! I’m a software engineer from France, passionate about crafting

@@ -12,9 +12,14 @@ import Projects from "@/components/Projects";
 export default function Home() {
   const sectionRefs = useRef<HTMLDivElement[]>([]);
 
-  const [width, setWidth] = useState<number>(
-    typeof window !== "undefined" ? window.innerWidth : 0
-  );
+  const [width, setWidth] = useState<number>(0);
+
+  useEffect(() => {
+    const updateWidth = () => setWidth(window.innerWidth);
+    updateWidth(); // Set width initially
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
 
   function handleWindowSizeChange() {
     setWidth(window.innerWidth);
@@ -70,14 +75,14 @@ export default function Home() {
           <Introduction />
         </div>
         <div
-          className="section h-screen w-full overflow-hidden"
+          className="section min-h-screen w-full overflow-hidden"
           ref={addToRefs}
         >
           <Me isMobile={isMobile} />
         </div>
         {isMobile && (
           <div
-            className="section h-screen w-full overflow-hidden"
+            className="section min-h-screen w-full overflow-hidden"
             ref={addToRefs}
           >
             <Skills isMobile={isMobile} />
@@ -85,7 +90,7 @@ export default function Home() {
         )}
         {isMobile && (
           <div
-            className="section h-screen w-full overflow-hidden"
+            className="section min-h-screen w-full overflow-hidden"
             ref={addToRefs}
           >
             <Projects isMobile={isMobile} />
