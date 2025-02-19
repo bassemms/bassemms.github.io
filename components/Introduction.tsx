@@ -9,7 +9,15 @@ import Image from "next/image";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Hyperspeed from "../Backgrounds/Hyperspeed/Hyperspeed.jsx";
 
-const Introduction = () => {
+import AudioSpectrum from "react-audio-spectrum";
+import classNames from "classnames";
+
+type IntroductionProps = {
+  width: number;
+  height: number;
+};
+
+const Introduction = ({ width, height }: IntroductionProps) => {
   gsap.registerPlugin(ScrollTrigger);
 
   const nameText = useRef<HTMLHeadingElement>(null);
@@ -17,6 +25,26 @@ const Introduction = () => {
   const github = useRef<HTMLAnchorElement>(null);
   const linkedin = useRef<HTMLAnchorElement>(null);
   const hyperspeed = useRef<HTMLDivElement>(null);
+
+  const audioEleRef = useRef<HTMLAudioElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      audioEleRef.current = new Audio("/music.mp3");
+      audioEleRef.current.volume = 0.1;
+    }
+  }, []);
+
+  const togglePlay = () => {
+    if (!audioEleRef.current) return;
+    if (isPlaying) {
+      audioEleRef.current.pause();
+    } else {
+      audioEleRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
 
   const [blur, setBlur] = useState(4);
 
@@ -107,12 +135,39 @@ const Introduction = () => {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] min-h-screen items-center justify-items-center bg-black">
       <div
+        id="hyperspeed"
         className={"z-0 absolute w-full h-full"}
         style={{ filter: `blur(${blur}px)` }}
         ref={hyperspeed}
       >
         <Hyperspeed />
       </div>
+
+      {audioEleRef.current && (
+        <div
+          className={classNames(
+            "z-1 absolute bottom-0",
+            isPlaying ? "visible" : "invisible"
+          )}
+        >
+          <AudioSpectrum
+            id="audio-canvas5"
+            audioEle={audioEleRef.current}
+            capColor={"#FF1396"}
+            width={width - 25}
+            height={height / 2}
+            capHeight={2}
+            meterWidth={8}
+            meterCount={256}
+            gap={4}
+            meterColor={[
+              { stop: 0, color: "#CF9FFF" },
+              { stop: 0.5, color: "#0CD7FD" },
+              { stop: 1, color: "#CF9FFF" },
+            ]}
+          />
+        </div>
+      )}
       <div className="flex flex-col gap-8 row-start-2 items-center lg:items-start">
         <div>
           <h1
@@ -162,6 +217,23 @@ const Introduction = () => {
             />
           </a>
         </div>
+      </div>
+
+      {/* Music Player Section */}
+      <div className="absolute bottom-8 flex items-center gap-4 bg-gray-800/30 p-3 rounded-xl backdrop-blur-3xl">
+        <a
+          className="text-white text-lg underline-offset-4 underline"
+          href="https://soundcloud.com/neoslyde"
+          target="_blank"
+        >
+          Hear my music?
+        </a>
+        <button
+          onClick={togglePlay}
+          className="bg-blue-500/80 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition backdrop-blur-3xl cursor-none"
+        >
+          {isPlaying ? "Pause" : "Play "}
+        </button>
       </div>
     </div>
   );

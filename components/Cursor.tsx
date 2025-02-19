@@ -7,6 +7,7 @@ const Cursor = () => {
   useEffect(() => {
     const cursor = document.getElementById("custom-cursor");
     const links = document.querySelectorAll("a");
+    const buttons = document.querySelectorAll("button");
 
     const cursorText = document.querySelector(".cursor-text");
 
@@ -31,6 +32,7 @@ const Cursor = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const onMouseEnterLink = (event: any) => {
       const link = event.target;
+
       if (link.classList.contains("view")) {
         gsap.to(cursor, { scale: 4 });
         if (cursorText) {
@@ -73,6 +75,11 @@ const Cursor = () => {
     links.forEach((link) => {
       link.addEventListener("mouseover", onMouseEnterLink);
       link.addEventListener("mouseleave", onMouseLeaveLink);
+    });
+
+    buttons.forEach((button) => {
+      button.addEventListener("mouseover", onMouseEnterLink);
+      button.addEventListener("mouseleave", onMouseLeaveLink);
     });
   });
 

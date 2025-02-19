@@ -13,12 +13,20 @@ export default function Home() {
   const sectionRefs = useRef<HTMLDivElement[]>([]);
 
   const [width, setWidth] = useState<number>(0);
+  const [height, setHeight] = useState<number>(0);
 
   useEffect(() => {
     const updateWidth = () => setWidth(window.innerWidth);
     updateWidth(); // Set width initially
     window.addEventListener("resize", updateWidth);
     return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
+  useEffect(() => {
+    const updateHeight = () => setHeight(window.innerHeight);
+    updateHeight(); // Set height initially
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
   }, []);
 
   function handleWindowSizeChange() {
@@ -84,7 +92,7 @@ export default function Home() {
           className="section h-screen w-full overflow-hidden"
           ref={addToRefs}
         >
-          <Introduction />
+          <Introduction height={height} width={width} />
         </div>
         <div
           className="section min-h-screen w-full overflow-hidden"

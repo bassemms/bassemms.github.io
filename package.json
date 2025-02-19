@@ -17,6 +17,7 @@
     "next": "15.1.4",
     "postprocessing": "^6.36.6",
     "react": "19.0.0",
+    "react-audio-spectrum": "^0.1.5",
     "react-dom": "19.0.0",
     "split-type": "^0.3.4",
     "three": "^0.167.1"
