@@ -88,10 +88,7 @@ export default function Home() {
     <>
       {isMobile || <Cursor />}
       <div className="font-[family-name:var(--font-satoshi-variable)]">
-        <div
-          className="section h-screen w-full overflow-hidden"
-          ref={addToRefs}
-        >
+        <div className="section min-h-screen w-full" ref={addToRefs}>
           <Introduction height={height} width={width} />
         </div>
         <div

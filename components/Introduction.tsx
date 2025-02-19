@@ -25,6 +25,7 @@ const Introduction = ({ width, height }: IntroductionProps) => {
   const github = useRef<HTMLAnchorElement>(null);
   const linkedin = useRef<HTMLAnchorElement>(null);
   const hyperspeed = useRef<HTMLDivElement>(null);
+  const music = useRef<HTMLDivElement>(null);
 
   const audioEleRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -130,10 +131,20 @@ const Introduction = ({ width, height }: IntroductionProps) => {
         delay: 2,
       });
     }
+
+    if (music.current) {
+      gsap.from(music.current, {
+        opacity: 0,
+        y: 100,
+        ease: "back",
+        duration: 1,
+        delay: 1,
+      });
+    }
   });
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] min-h-screen items-center justify-items-center bg-black">
+    <div className="grid grid-rows-[auto_1fr_auto] min-h-svh overflow-hidden items-center justify-items-center bg-black min-h-screen">
       <div
         id="hyperspeed"
         className={"z-0 absolute w-full h-full"}
@@ -146,7 +157,7 @@ const Introduction = ({ width, height }: IntroductionProps) => {
       {audioEleRef.current && (
         <div
           className={classNames(
-            "z-1 absolute bottom-0",
+            "z-1 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full flex justify-center select-none",
             isPlaying ? "visible" : "invisible"
           )}
         >
@@ -220,9 +231,12 @@ const Introduction = ({ width, height }: IntroductionProps) => {
       </div>
 
       {/* Music Player Section */}
-      <div className="absolute bottom-8 flex items-center gap-4 bg-gray-800/30 p-3 rounded-xl backdrop-blur-3xl">
+      <div
+        className="absolute bottom-8 flex items-center gap-4 bg-gray-800/30 p-3 rounded-xl backdrop-blur-3xl left-1/2 transform -translate-x-1/2 select-none"
+        ref={music}
+      >
         <a
-          className="text-white text-lg underline-offset-4 underline"
+          className="text-white text-lg underline-offset-4 underline text-nowrap"
           href="https://soundcloud.com/neoslyde"
           target="_blank"
         >
