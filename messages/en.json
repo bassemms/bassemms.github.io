@@ -1,0 +1,84 @@
+{
+  "Metadata": {
+    "title": "Bassem Msayif | Software Engineer",
+    "description": "Software engineer in France building thoughtful, reliable products across front end, back end, and infrastructure.",
+    "ogDescription": "Full-stack engineer turning complex problems into thoughtful, reliable products."
+  },
+  "Portfolio": {
+    "accessibility": {
+      "primaryNavigation": "Primary navigation",
+      "home": "Bassem Msayif, home",
+      "portrait": "Portrait of Bassem Msayif",
+      "musicEasterEgg": "A hidden musical easter egg",
+      "language": "Choose language",
+      "companyLogo": "{company} logo"
+    },
+    "nav": {"about": "About", "experience": "Experience", "work": "Work", "contact": "Contact", "connect": "Let's connect"},
+    "hero": {
+      "eyebrow": "Software engineer · France",
+      "title1": "I build software",
+      "title2": "that",
+      "titleEm": "makes sense.",
+      "intro": "Full-stack engineer turning complex problems into thoughtful, reliable products, from the interface to the infrastructure.",
+      "explore": "Explore my work",
+      "about": "A little about me",
+      "currently": "Currently",
+      "currentRole": "Software Engineer at Calenco",
+      "linkedin": "Connect with me on LinkedIn",
+      "scroll": "Scroll to discover"
+    },
+    "about": {
+      "label": "About",
+      "title": "Engineer by trade.",
+      "titleEm": "Builder by nature.",
+      "lead": "I'm Bassem, a software engineer based in southern France. I care about the entire path from a real problem to software people enjoy using.",
+      "body1": "Coding has been a constant since I discovered it early on. Working with different teams and teaching others has shaped how I think about architecture, good practices, and the value of changing your mind.",
+      "body2": "I like crossing boundaries between front end, back end, and infrastructure. The best products happen when engineers understand their users, own their decisions, and stay curious about the whole system.",
+      "principles": ["Clean architecture", "Product thinking", "Continuous learning"]
+    },
+    "experience": {
+      "label": "Experience",
+      "title": "Where I've made",
+      "titleEm": "an impact.",
+      "intro": "A journey through products, teams, and increasingly ambitious technical challenges.",
+      "items": {
+        "calenco": {
+          "role": "Software Engineer", "type": "Permanent contract", "period": "Apr 2025 - Present", "place": "Venelles, France · Hybrid",
+          "summary": "Technical lead for the company website, taking it from design through production deployment.",
+          "highlights": ["Building modern React interfaces and migrating legacy Redux architecture to Redux Toolkit slices.", "Developing Java back-end services, designing APIs, and integrating Neo4j with Cypher.", "Refactoring JavaScript, jQuery, and React code for maintainability, readability, and reuse."]
+        },
+        "gojob": {
+          "role": "Software Engineer", "type": "Internship", "period": "Apr 2024 - Sep 2024 · 6 months", "place": "Aix-en-Provence, France · On-site",
+          "summary": "Developed a scalable application with React and NestJS using Clean Architecture and test-driven development.",
+          "highlights": ["Collaborated through code reviews and pair programming to improve quality and engineering standards.", "Managed Kubernetes microservice deployments and optimized PostgreSQL interactions."]
+        },
+        "magicChess": {
+          "role": "Software Engineer", "type": "Internship", "period": "Apr 2023 - Aug 2023 · 5 months", "place": "Marseille, France · On-site",
+          "summary": "Created a customer-support CRM web app with efficient data access and real-time KPI visualization.",
+          "highlights": ["Engineered a client/server bot for automated in-game testing and more reliable test workflows."]
+        }
+      }
+    },
+    "work": {
+      "label": "Selected work", "title": "Things I've", "titleEm": "brought to life.", "github": "All projects on GitHub",
+      "items": {
+        "ads": {"title": "Alternant Dans la Salle", "text": "A classroom attendance platform designed to make apprenticeship tracking simple and reliable."},
+        "dungeon": {"title": "Dungeon", "text": "A 2D rogue-like RPG built in JavaFX with design patterns, SOLID principles, and a focus on extensibility."},
+        "yams": {"title": "YAMS", "text": "A lightweight microblogging server and client exploring clear boundaries and networked application design."},
+        "fireclock": {"title": "FireClock", "text": "A cross-platform scheduling app with a Flutter client and a TypeScript-powered back end."}
+      }
+    },
+    "toolkit": {"label": "Toolkit", "title": "Tools I use to", "titleEm": "get it done."},
+    "education": {
+      "label": "Education", "title": "Always", "titleEm": "learning.",
+      "master": "Master's in Computer Science", "masterField": "Software Development Engineering",
+      "bachelor": "Bachelor's in Computer Science", "bachelorField": "Computer Science", "university": "Aix-Marseille University"
+    },
+    "contact": {
+      "eyebrow": "One message could start something great", "title": "Let's build", "titleEm": "what's next.",
+      "text": "Whether you're hiring, shaping a product, or exploring a bold idea, I'd love to hear what you're working on.",
+      "preferEmail": "Prefer email?", "linkedinEyebrow": "Open to meaningful conversations", "linkedin": "Let's connect on LinkedIn",
+      "backToTop": "Back to top"
+    }
+  }
+}

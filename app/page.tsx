@@ -1,119 +1,29 @@
 "use client";
 
-import Cursor from "@/components/Cursor";
-import Introduction from "@/components/Introduction";
-import Me from "@/components/Me";
-import Lenis from "lenis";
-import { useRef, useEffect, useState } from "react";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
+import { useEffect } from "react";
+import Link from "next/link";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { initializeLocale } from "../store/localeSlice";
 
-export default function Home() {
-  const sectionRefs = useRef<HTMLDivElement[]>([]);
-
-  const [width, setWidth] = useState<number>(0);
-  const [height, setHeight] = useState<number>(0);
+export default function LocaleRedirect() {
+  const dispatch = useAppDispatch();
+  const { locale, initialized } = useAppSelector((state) => state.locale);
 
   useEffect(() => {
-    const updateWidth = () => setWidth(window.innerWidth);
-    updateWidth(); // Set width initially
-    window.addEventListener("resize", updateWidth);
-    return () => window.removeEventListener("resize", updateWidth);
-  }, []);
+    const storedLocale = localStorage.getItem("portfolio-locale");
+    const browserLanguages = navigator.languages.length ? navigator.languages : [navigator.language];
+    dispatch(initializeLocale({ storedLocale, browserLanguages }));
+  }, [dispatch]);
 
   useEffect(() => {
-    const updateHeight = () => setHeight(window.innerHeight);
-    updateHeight(); // Set height initially
-    window.addEventListener("resize", updateHeight);
-    return () => window.removeEventListener("resize", updateHeight);
-  }, []);
-
-  function handleWindowSizeChange() {
-    setWidth(window.innerWidth);
-  }
-  useEffect(() => {
-    window.addEventListener("resize", handleWindowSizeChange);
-    return () => {
-      window.removeEventListener("resize", handleWindowSizeChange);
-    };
-  }, []);
-
-  const isMobile = width <= 768;
-
-  const addToRefs = (el: HTMLDivElement | null) => {
-    if (el && !sectionRefs.current.includes(el)) {
-      sectionRefs.current.push(el);
-    }
-  };
-
-  useEffect(() => {
-    const lenis = new Lenis();
-    const raf = (time: number) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-    requestAnimationFrame(raf);
-
-    if (isMobile) {
-      sectionRefs.current.forEach((section) => {
-        if (section) {
-          ScrollTrigger.create({
-            trigger: section,
-            start: "top top",
-            end: "bottom top",
-          });
-        }
-      });
-    } else {
-      sectionRefs.current.forEach((section) => {
-        if (section) {
-          ScrollTrigger.create({
-            trigger: section,
-            start: "top top",
-            end: "bottom top",
-            snap: {
-              snapTo: 1,
-              duration: { min: 0.2, max: 0.5 },
-              delay: 0.5,
-              ease: "power1.inOut",
-            },
-          });
-        }
-      });
-    }
-  }, [isMobile]);
+    if (!initialized) return;
+    window.location.replace(`/${locale}/`);
+  }, [initialized, locale]);
 
   return (
-    <>
-      {isMobile || <Cursor />}
-      <div className="font-[family-name:var(--font-satoshi-variable)]">
-        <div className="section min-h-screen w-full" ref={addToRefs}>
-          <Introduction height={height} width={width} />
-        </div>
-        <div
-          className="section min-h-screen w-full overflow-hidden"
-          ref={addToRefs}
-        >
-          <Me isMobile={isMobile} />
-        </div>
-        {isMobile && (
-          <div
-            className="section min-h-screen w-full overflow-hidden"
-            ref={addToRefs}
-          >
-            <Skills isMobile={isMobile} />
-          </div>
-        )}
-        {isMobile && (
-          <div
-            className="section min-h-screen w-full overflow-hidden"
-            ref={addToRefs}
-          >
-            <Projects isMobile={isMobile} />
-          </div>
-        )}
-      </div>
-    </>
+    <main className="locale-loading" aria-live="polite">
+      <p>Loading your language...</p>
+      <noscript><Link href="/en/">Continue in English</Link> · <Link href="/fr/">Continuer en français</Link></noscript>
+    </main>
   );
 }

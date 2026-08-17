@@ -1,0 +1,84 @@
+{
+  "Metadata": {
+    "title": "Bassem Msayif | Ingénieur logiciel",
+    "description": "Ingénieur logiciel en France, je conçois des produits fiables et réfléchis, du front-end à l'infrastructure.",
+    "ogDescription": "Ingénieur full-stack, je transforme des problèmes complexes en produits fiables et bien pensés."
+  },
+  "Portfolio": {
+    "accessibility": {
+      "primaryNavigation": "Navigation principale",
+      "home": "Bassem Msayif, accueil",
+      "portrait": "Portrait de Bassem Msayif",
+      "musicEasterEgg": "Un easter egg musical caché",
+      "language": "Choisir la langue",
+      "companyLogo": "Logo de {company}"
+    },
+    "nav": {"about": "À propos", "experience": "Expérience", "work": "Projets", "contact": "Contact", "connect": "Échangeons"},
+    "hero": {
+      "eyebrow": "Software Engineer · France",
+      "title1": "Je conçois du software",
+      "title2": "qui a",
+      "titleEm": "du sens.",
+      "intro": "Ingénieur full-stack, je transforme des problèmes complexes en produits fiables et bien pensés, de l'interface à l'infrastructure.",
+      "explore": "Voir mon expérience",
+      "about": "En savoir plus",
+      "currently": "Actuellement",
+      "currentRole": "Software Engineer chez Calenco",
+      "linkedin": "Me contacter sur LinkedIn",
+      "scroll": "Faire défiler pour découvrir"
+    },
+    "about": {
+      "label": "À propos",
+      "title": "Ingénieur de métier.",
+      "titleEm": "Builder par nature.",
+      "lead": "Je m'appelle Bassem, ingénieur logiciel basé dans le sud de la France. Je m'intéresse à tout le parcours qui mène d'un problème réel à un logiciel que les utilisateurs apprécient.",
+      "body1": "Le code fait partie de mon quotidien depuis que je l'ai découvert très jeune. Travailler avec différentes équipes et transmettre mes connaissances a façonné ma façon de penser l'architecture, les bonnes pratiques et l'importance de savoir remettre ses choix en question.",
+      "body2": "J'aime évoluer entre le front-end, le back-end et l'infrastructure. Les meilleurs produits naissent lorsque les ingénieurs comprennent leurs utilisateurs, assument leurs décisions et restent curieux de l'ensemble du système.",
+      "principles": ["Clean Architecture", "Product thinking", "Apprentissage continu"]
+    },
+    "experience": {
+      "label": "Expérience",
+      "title": "Là où j'ai eu",
+      "titleEm": "un impact.",
+      "intro": "Un parcours entre produits, équipes et défis techniques toujours plus ambitieux.",
+      "items": {
+        "calenco": {
+          "role": "Software Engineer", "type": "CDI", "period": "Avr. 2025 - Aujourd'hui", "place": "Venelles, France · Hybride",
+          "summary": "Lead technique du site de l'entreprise, de sa conception jusqu'à sa mise en production.",
+          "highlights": ["Création d'interfaces React modernes et migration d'une architecture Redux legacy vers Redux Toolkit.", "Développement de services back-end Java, conception d'API et intégration de Neo4j avec Cypher.", "Refactorisation de code JavaScript, jQuery et React pour améliorer sa maintenabilité, sa lisibilité et sa réutilisabilité."]
+        },
+        "gojob": {
+          "role": "Software Engineer", "type": "Stage", "period": "Avr. 2024 - Sept. 2024 · 6 mois", "place": "Aix-en-Provence, France · Sur site",
+          "summary": "Développement d'une application évolutive avec React et NestJS en appliquant la Clean Architecture et le Test-Driven Development (TDD).",
+          "highlights": ["Participation aux code reviews et au pair programming pour renforcer la qualité du code et les standards de l'équipe.", "Déploiement de microservices avec Kubernetes et optimisation des interactions avec PostgreSQL."]
+        },
+        "magicChess": {
+          "role": "Software Engineer", "type": "Stage", "period": "Avr. 2023 - Août 2023 · 5 mois", "place": "Marseille, France · Sur site",
+          "summary": "Création d'une application CRM de support client avec accès efficace aux données et visualisation des KPI en temps réel.",
+          "highlights": ["Conception d'un bot client-serveur pour automatiser les tests en jeu et fiabiliser les processus de validation."]
+        }
+      }
+    },
+    "work": {
+      "label": "Projets sélectionnés", "title": "Des projets auxquels j'ai", "titleEm": "donné vie.", "github": "Tous les projets sur GitHub",
+      "items": {
+        "ads": {"title": "Alternant Dans la Salle", "text": "Une plateforme de suivi des présences conçue pour simplifier et fiabiliser le suivi de l'alternance."},
+        "dungeon": {"title": "Dungeon", "text": "Un RPG rogue-like 2D développé avec JavaFX, les design patterns et les principes SOLID, avec une architecture extensible."},
+        "yams": {"title": "YAMS", "text": "Un serveur et client de microblogging léger, conçu autour de responsabilités claires et d'une architecture réseau structurée."},
+        "fireclock": {"title": "FireClock", "text": "Une application de planification multiplateforme avec un client Flutter et un back-end TypeScript."}
+      }
+    },
+    "toolkit": {"label": "Toolkit", "title": "Tools I use to", "titleEm": "get it done."},
+    "education": {
+      "label": "Formation", "title": "Toujours en train", "titleEm": "d'apprendre.",
+      "master": "Master en informatique", "masterField": "Ingénierie du développement logiciel",
+      "bachelor": "Licence en informatique", "bachelorField": "Informatique", "university": "Aix-Marseille Université"
+    },
+    "contact": {
+      "eyebrow": "Un message peut être le début d'une belle collaboration", "title": "Construisons", "titleEm": "la suite.",
+      "text": "Vous recrutez, développez un produit ou explorez une idée ambitieuse ? Je serais ravi de découvrir ce sur quoi vous travaillez.",
+      "preferEmail": "Vous préférez l'email ?", "linkedinEyebrow": "Toujours ouvert aux échanges intéressants", "linkedin": "Échangeons sur LinkedIn",
+      "backToTop": "Retour en haut"
+    }
+  }
+}
