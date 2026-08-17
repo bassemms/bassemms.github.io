@@ -213,7 +213,8 @@ footer a { display:inline-flex; min-height:44px; align-items:center; gap:7px; }
   .hero h1 { font-size:clamp(52px,15.8vw,78px); } .hero-intro { font-size:17px; }
   .locale-root[lang="fr"] .hero h1 { font-size:clamp(46px,12.5vw,62px); line-height:1; }
   .hero-actions { align-items:flex-start; flex-direction:column; gap:24px; }
-  .hero-visual { order:2; width:100%; } .portrait-frame { width:70%; max-width:300px; margin-inline:auto; }
+  .hero-visual { order:2; width:70%; max-width:280px; }
+  .portrait-frame { width:100%; margin-inline:auto; }
   .status-card { right:0; bottom:8%; width:210px; } .orbit-one { left:0; } .music-easter-egg { left:2px; top:30%; } .shape-diamond { right:3px; } .shape-pill { right:-4px; } .hero-foot { display:none; }
   .section-shell { padding:85px 20px; border-radius:0; } .section-label { margin-bottom:50px; }
   .about { padding-bottom:125px; }
