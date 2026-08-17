@@ -211,13 +211,16 @@ footer a { display:inline-flex; min-height:44px; align-items:center; gap:7px; }
   .hero { min-height:auto; grid-template-columns:1fr; gap:55px; padding:118px 20px 100px; }
   .hero::before { width:360px; height:360px; filter:blur(75px); left:-220px; }
   .drifting-shape { width:clamp(20px,7vw,32px); opacity:.62; filter:blur(var(--shape-blur)); }
+  .hero-copy { width:100%; text-align:center; }
+  .hero-copy .eyebrow { justify-content:center; }
   .hero h1 { font-size:clamp(52px,15.8vw,78px); } .hero-intro { font-size:17px; }
+  .hero-intro { margin-inline:auto; }
   .locale-root[lang="fr"] .hero h1 { font-size:clamp(46px,12.5vw,62px); line-height:1; }
-  .hero-actions { align-items:flex-start; flex-direction:column; gap:24px; }
+  .hero-actions { align-items:center; flex-direction:column; gap:24px; }
   .hero-visual { order:2; width:70%; max-width:280px; }
   .portrait-frame { width:100%; margin-inline:auto; }
   .portrait-connect { left:50%; max-width:calc(100vw - 32px); gap:8px; padding-inline:14px; translate:-50% 0; }
-  .status-card { right:0; bottom:8%; width:210px; } .orbit-one { left:0; } .music-easter-egg { left:2px; top:30%; } .shape-diamond { right:3px; } .shape-pill { right:-4px; } .hero-foot { display:none; }
+  .status-card { right:auto; left:50%; bottom:8%; width:210px; translate:-50% 0; } .orbit-one { left:0; } .music-easter-egg { left:2px; top:30%; } .shape-diamond { right:3px; } .shape-pill { right:-4px; } .hero-foot { display:none; }
   .section-shell { padding:85px 20px; border-radius:0; } .section-label { margin-bottom:50px; }
   .about { padding-bottom:125px; }
   .experience,.work,.skills-education { margin-top:-38px; padding-top:105px; padding-bottom:125px; border-radius:38px 38px 0 0; }
